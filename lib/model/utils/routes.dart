@@ -1,10 +1,11 @@
 
 import 'package:flutter/material.dart';
+import 'package:loan/view/screens/login_screen.dart';
 import 'package:loan/view/screens/splash_screen.dart';
 import 'package:loan/view/screens/welcome_screen.dart';
 const splashScreenRoute = '/splash-screen';
 const welcomeScreenRoute = '/Welcome-screen';
-const signUpScreenRoute = '/signup-screen';
+const loginScreenRoute = '/login-screen';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
@@ -17,9 +18,9 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(
           builder: (BuildContext context) => WelcomeScreen());
 
-    // case signUpScreenRoute:
-    //   return MaterialPageRoute(
-    //       builder: (BuildContext context) => SignupScreen());
+    case loginScreenRoute:
+      return MaterialPageRoute(
+          builder: (BuildContext context) => LoginScreen());
 
 
 

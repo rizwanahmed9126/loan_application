@@ -24,20 +24,20 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
 
-            title: 'B2 Connect',
+            title: 'Loan',
             color: Theme.of(context).backgroundColor,
             debugShowCheckedModeBanner: false,
             //locale: model.appLocal,
             navigatorKey: locator<NavigationService>().navigatorKey,
             theme: ThemeData(
-              fontFamily: "Poppins",
-              primaryColor: Color.fromRGBO(224, 69, 123, 1),
+              //fontFamily: "Poppins",
+              //primaryColor: Color.fromRGBO(224, 69, 123, 1),
               // ignore: deprecated_member_use
-              accentColor: Color.fromRGBO(172, 182, 190, 1),
+              //accentColor: Color.fromRGBO(172, 182, 190, 1),
               visualDensity: VisualDensity.adaptivePlatformDensity,
             ),
             onGenerateRoute: onGenerateRoute,
-            initialRoute: splashScreenRoute,
+            initialRoute: welcomeScreenRoute,
             // home: CartScreen(),
           ),
         //);
