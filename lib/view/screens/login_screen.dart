@@ -26,6 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
     final height=MediaQuery.of(context).size.height;
     final width=MediaQuery.of(context).size.width;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: sBlack,
       body: Stack(
         fit: StackFit.loose,
@@ -68,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
               Column(
                 children: [
-                  textField(context,_emailController),
+                  textField(context,_emailController,'Email or Phone'),
 
                   SizedBox(height: height*0.05,),
                   Container(

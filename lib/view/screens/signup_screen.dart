@@ -29,6 +29,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     final width=MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: sBlack,
+      resizeToAvoidBottomInset: false,
       body: Stack(
         fit: StackFit.loose,
         children: [
@@ -70,7 +71,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
               Column(
                 children: [
-                  textField(context,_emailController),
+                  textField(context,_emailController,'Email or Phone'),
 
                   SizedBox(height: height*0.05,),
                   Container(

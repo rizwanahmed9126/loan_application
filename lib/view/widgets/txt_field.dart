@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:loan/model/models/constants/constants.dart';
 
-Widget textField(context,TextEditingController controller,){
+Widget textField(context,TextEditingController controller,String hinttxt){
   final height=MediaQuery.of(context).size.height;
   final width=MediaQuery.of(context).size.width;
   return  Container(
@@ -26,7 +26,7 @@ Widget textField(context,TextEditingController controller,){
           //   color: Colors.black,
           // ),
 
-          hintText: 'Email or Phone',
+          hintText: hinttxt,
           hintStyle: GoogleFonts.montserrat(
 
             color: Colors.black,
