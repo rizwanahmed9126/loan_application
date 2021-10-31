@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:loan/model/services/navigation_service.dart';
 import 'package:loan/model/utils/routes.dart';
 import 'package:loan/model/utils/service_locator.dart';
@@ -30,14 +31,14 @@ class MyApp extends StatelessWidget {
             //locale: model.appLocal,
             navigatorKey: locator<NavigationService>().navigatorKey,
             theme: ThemeData(
-              //fontFamily: "Poppins",
+              //fontFamily: ,
               //primaryColor: Color.fromRGBO(224, 69, 123, 1),
               // ignore: deprecated_member_use
               //accentColor: Color.fromRGBO(172, 182, 190, 1),
               visualDensity: VisualDensity.adaptivePlatformDensity,
             ),
             onGenerateRoute: onGenerateRoute,
-            initialRoute: welcomeScreenRoute,
+            initialRoute: signUpScreenRoute,
             // home: CartScreen(),
           ),
         //);

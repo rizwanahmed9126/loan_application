@@ -5,21 +5,23 @@ import 'package:loan/model/models/constants/constants.dart';
 import 'package:loan/model/services/navigation_service.dart';
 import 'package:loan/model/utils/routes.dart';
 import 'package:loan/model/utils/service_locator.dart';
+import 'package:loan/view/screens/login_screen.dart';
 import 'package:loan/view/widgets/button.dart';
 import 'package:loan/view/widgets/txt_field.dart';
 
-class LoginScreen extends StatefulWidget {
+class SignUpScreen extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _SignUpScreenState createState() => _SignUpScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
 
   var navigationService = locator<NavigationService>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
   bool hidePswd=true;
+  bool _checked=false;
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +33,8 @@ class _LoginScreenState extends State<LoginScreen> {
         fit: StackFit.loose,
         children: [
           Positioned(
-              bottom: height*0.35,
-              left: width*0.1,
+              top: height*0.22,
+              right: -5,
 
               child: Container(
                 //height: 300,
@@ -46,11 +48,11 @@ class _LoginScreenState extends State<LoginScreen> {
             //height: height*0.94,
             //width: width*0.85,
             decoration: BoxDecoration(
-                //color: Colors.red,
-              image: DecorationImage(
-                image: AssetImage('assets/images/Path 32.png',),
-                fit: BoxFit.cover
-              )
+              //color: Colors.red,
+                image: DecorationImage(
+                    image: AssetImage('assets/images/Path 32.png',),
+                    fit: BoxFit.cover
+                )
             ),
 
           ),
@@ -60,10 +62,10 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
 
               SizedBox(height: height*0.02,),
-              Text('Login',style: GoogleFonts.montserrat(fontSize: 20,color: Colors.white,letterSpacing: 2),),
+              Text('Sign Up',style: GoogleFonts.montserrat(fontSize: 20,color: Colors.white,letterSpacing: 2),),
               //SizedBox(height: height*0.05,),
               Container(
-                width: width*0.8,
+                  width: width*0.8,
                   child: Text('Curabitur sodales cursus enim, id ultrices lacus scelerique.',textAlign: TextAlign.left, style: GoogleFonts.montserrat(fontSize: 15,color: Colors.white,letterSpacing: 2),)),
 
               Column(
@@ -110,12 +112,36 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
+                  SizedBox(height: height*0.02,),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Checkbox(
+                          side: BorderSide(color: Colors.white),
+                        activeColor:Color(0xFFFCD3C4) ,
+                          checkColor: Colors.black,
+                          focusColor: Colors.white,
+
+                          value: _checked, onChanged: (val) {
+                    setState(() {
+                      _checked = val!;
+                    });
+                  }
+                  ),
+                      Text('Accept our ',style: GoogleFonts.montserrat(color: Colors.white,fontSize: 12),),
+                      Text('Terms of service ',style: GoogleFonts.montserrat(color: sSky,fontSize: 12)),
+                      Text('and ',style: GoogleFonts.montserrat(color: Colors.white,fontSize: 12)),
+                      Text('privacy policy',style: GoogleFonts.montserrat(color: sSky,fontSize: 12))
+
+                    ],
+                  ),
 
                   SizedBox(height: height*0.05,),
                   button(
                       height: height*0.08,
                       width: width*0.4,
-                      txt: 'Login'
+                      txt: 'Sign Up'
                   ),
 
                 ],
@@ -128,15 +154,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Do not have an account? ',
+                        'Already have an account? ',
                         style: TextStyle(fontSize: 15,color: Colors.white),
                       ),
                       GestureDetector(
                         onTap: (){
-                          navigationService.navigateTo(signUpScreenRoute);
+                          navigationService.navigateTo(loginScreenRoute);
                         },
                         child: Text(
-                          'Sign Up Now',
+                          'Log In Now',
                           style: TextStyle(fontSize: 15,color: sSky),
                         ),
                       ),
@@ -165,7 +191,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
 
 
-    ],
+            ],
           ),
         ],
       ),

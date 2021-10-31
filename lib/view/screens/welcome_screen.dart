@@ -5,6 +5,7 @@ import 'package:loan/model/models/constants/constants.dart';
 import 'package:loan/model/services/navigation_service.dart';
 import 'package:loan/model/utils/routes.dart';
 import 'package:loan/model/utils/service_locator.dart';
+import 'package:loan/view/screens/login_screen.dart';
 import 'package:loan/view/widgets/button.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -29,19 +30,46 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         children: [
 
           Positioned(
-            bottom: -10,
-              left: 55,
-              //right: 0,
+            bottom: 0,
+              right: 0,
 
               child: Container(
                 //height: 300,
                   child: Image.asset('assets/images/hand.png')
               )
           ),
+          Positioned(
+              top: height*0.17,
+              left: -20,
+
+              child: Container(
+                //height: 300,
+                  child: Image.asset('assets/images/left_ellipse_1.png')
+              )
+          ),
+          Positioned(
+              top: height*0.25,
+              right: width*0.3,
+
+              child: Container(
+                //height: 300,
+                  child: Image.asset('assets/images/Ellipse 3.png')
+              )
+          ),
+          Positioned(
+              bottom: 20,
+              right: 0,
+
+              child: Container(
+                //height: 300,
+                  child: Image.asset('assets/images/right_ellipse_2.png')
+              )
+          ),
 
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
+              //SizedBox(height: height*0.03,),
               Column(
                 children: [
                   Container(
@@ -54,27 +82,32 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ],
               ),
 
+
               Container(
                 height: height*0.3,
+                  //alignment: Alignment.bottomLeft,
                   //width: width*0.4,
+                 // color: Colors.red,
                   child: Text(
                     'Loans at the \ntip of your \nfingers',
                     style: GoogleFonts.montserrat(fontSize: 40,color: Colors.white,letterSpacing: 3),
                   )
               ),
+             // SizedBox(height: height*0.05,),
               Column(
                 children: [
-                  button(
-                    height: height*0.08,
-                    width: width*0.49,
+                  GestureDetector(
                     onTap: (){
-
                       navigationService.navigateTo(loginScreenRoute);
                     },
-                    txt: 'Get Started'
+                    child: button(
+                      height: height*0.08,
+                      width: width*0.54,
+                      txt: 'Get Started'
+                    ),
                   ),
 
-                  SizedBox(height: height*0.04),
+                  SizedBox(height: height*0.03),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -82,9 +115,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         'Already have an account? ',
                         style: TextStyle(fontSize: 17,color: Colors.white),
                       ),
-                      Text(
-                        'Log In',
-                        style: TextStyle(fontSize: 17,color: sSky),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+                        },
+                        child: Text(
+                          'Log In',
+                          style: TextStyle(fontSize: 17,color: sSky),
+                        ),
                       ),
                     ],
                   ),
