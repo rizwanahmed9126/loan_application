@@ -113,10 +113,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
 
                   SizedBox(height: height*0.05,),
-                  button(
-                      height: height*0.08,
-                      width: width*0.4,
-                      txt: 'Login'
+                  GestureDetector(
+                    onTap: (){
+                      navigationService.navigateTo(otpScreenRoute);
+                    },
+                    child: button(
+                        height: height*0.08,
+                        width: width*0.4,
+                        txt: 'Login'
+                    ),
                   ),
 
                 ],

@@ -20,8 +20,8 @@ class _otpScreenState extends State<otpScreen> {
 
   final TextEditingController _otpController = TextEditingController();
 
-  bool hidePswd=true;
-  bool _checked=false;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class _otpScreenState extends State<otpScreen> {
               ),
               Container(
                   width: width*0.8,
-                  child: Text('+237 676545675',textAlign: TextAlign.center, style: GoogleFonts.montserrat(fontSize: 14,color: Colors.white,letterSpacing: 2),
+                  child: Text('+237 676545675',textAlign: TextAlign.center, style: GoogleFonts.montserrat(fontSize: 15,decoration: TextDecoration.underline,color: sSky,letterSpacing: 1),
                   )
               ),
               Container(
@@ -92,7 +92,7 @@ class _otpScreenState extends State<otpScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Already have an account? ',
+                        'Did not Receive Code? ',
                         style: TextStyle(fontSize: 15,color: Colors.white),
                       ),
                       GestureDetector(
@@ -100,7 +100,7 @@ class _otpScreenState extends State<otpScreen> {
                           navigationService.navigateTo(loginScreenRoute);
                         },
                         child: Text(
-                          'Log In Now',
+                          'Resend Code',
                           style: TextStyle(fontSize: 15,color: sSky),
                         ),
                       ),

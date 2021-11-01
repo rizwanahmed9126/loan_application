@@ -139,10 +139,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
 
                   SizedBox(height: height*0.05,),
-                  button(
-                      height: height*0.08,
-                      width: width*0.4,
-                      txt: 'Sign Up'
+                  GestureDetector(
+                    onTap: (){
+                      navigationService.navigateTo(otpScreenRoute);
+                    },
+                    child: button(
+                        height: height*0.08,
+                        width: width*0.4,
+                        txt: 'Sign Up'
+                    ),
                   ),
 
                 ],

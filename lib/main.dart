@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
               visualDensity: VisualDensity.adaptivePlatformDensity,
             ),
             onGenerateRoute: onGenerateRoute,
-            initialRoute: otpScreenRoute,
+            initialRoute: splashScreenRoute,
             // home: CartScreen(),
           ),
         //);
