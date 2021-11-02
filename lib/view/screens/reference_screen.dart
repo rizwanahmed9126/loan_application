@@ -7,12 +7,12 @@ import 'package:loan/model/utils/service_locator.dart';
 import 'package:loan/view/widgets/button.dart';
 import 'package:loan/view/widgets/txt_field.dart';
 
-class OccupationScreen extends StatefulWidget {
+class ReferenceScreen extends StatefulWidget {
   @override
-  _OccupationScreenState createState() => _OccupationScreenState();
+  _ReferenceScreenState createState() => _ReferenceScreenState();
 }
 
-class _OccupationScreenState extends State<OccupationScreen> {
+class _ReferenceScreenState extends State<ReferenceScreen> {
   var navigationService = locator<NavigationService>();
   final TextEditingController _professionController = TextEditingController();
   final TextEditingController _companyController = TextEditingController();
@@ -42,8 +42,8 @@ class _OccupationScreenState extends State<OccupationScreen> {
         fit: StackFit.loose,
         children: [
           Positioned(
-              bottom: height*0.1,
-              left: -35,
+              bottom: -height*0.06,
+              left: 0,
 
               child: Container(
                 //height: 300,
@@ -51,8 +51,8 @@ class _OccupationScreenState extends State<OccupationScreen> {
               )
           ),
           Positioned(
-              bottom: height*0.25,
-              right: 0,
+              top: height*0.05,
+              right: -width*0.08,
 
               child: Container(
                 //height: 300,
@@ -73,7 +73,7 @@ class _OccupationScreenState extends State<OccupationScreen> {
 
 
                     SizedBox(height: height*0.05,),
-                    Text('Your occupation',style: GoogleFonts.montserrat(fontSize: 23,letterSpacing: 2,fontWeight: FontWeight.bold),),
+                    Text('Add a reference',style: GoogleFonts.montserrat(fontSize: 23,letterSpacing: 2,fontWeight: FontWeight.bold),),
                     SizedBox(height: height*0.05,),
                     Container(
                         width: width*0.8,
@@ -107,12 +107,13 @@ class _OccupationScreenState extends State<OccupationScreen> {
                         ),
                       ),
                     ),
+                    //txtField(context,_professionController,'Position'),
 
                     SizedBox(height: 20),
                     txtField(context,_companyController,'Company'),
 
-                    SizedBox(height: 20),
-                    txtField(context,_placeController,'Place of Work'),
+                    // SizedBox(height: 20),
+                    // txtField(context,_placeController,'Place of Work'),
 
                     //SizedBox(height: 5,),
                     // SizedBox(height: height*0.02,),
@@ -136,18 +137,29 @@ class _OccupationScreenState extends State<OccupationScreen> {
 
                 GestureDetector(
                     onTap: (){
-                      navigationService.navigateTo(workScreenRoute);
+                      //navigationService.navigateTo(occupationScreenRoute);
+                    },
+                    child: Center(
+                      child:
+                      Text('SKIP',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold,letterSpacing: 2,),),
+                    )
+
+                ),
+
+                GestureDetector(
+                    onTap: (){
+                      navigationService.navigateTo(initialPaymentScreenRoute);
                     },
                     child: Container(
                         height: height*0.07,
                         width: width,
                         decoration: BoxDecoration(
-                            color: Color(0xFFE0E1E0),
+                            color:sBlack,
                             borderRadius: BorderRadius.circular(12)
                         ),
                         child: Center(
                           child:
-                          Text('NEXT',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold,letterSpacing: 2,color: Colors.white),),
+                          Text('FINISH',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold,letterSpacing: 2,color: Colors.white),),
                         )
 
                     )

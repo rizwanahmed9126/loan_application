@@ -76,10 +76,15 @@ class _otpScreenState extends State<otpScreen> {
 
 
                   SizedBox(height: height*0.05,),
-                  button(
-                      height: height*0.08,
-                      width: width*0.4,
-                      txt: 'Verify'
+                  GestureDetector(
+                    onTap: (){
+                      navigationService.navigateTo(homeScreenRoute);
+                    },
+                    child: button(
+                        height: height*0.08,
+                        width: width*0.4,
+                        txt: 'Verify'
+                    ),
                   ),
 
                 ],

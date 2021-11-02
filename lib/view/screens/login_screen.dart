@@ -115,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(height: height*0.05,),
                   GestureDetector(
                     onTap: (){
-                      navigationService.navigateTo(otpScreenRoute);
+                      navigationService.navigateTo(signUpScreenRoute);
                     },
                     child: button(
                         height: height*0.08,
