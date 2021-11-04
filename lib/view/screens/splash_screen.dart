@@ -38,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Container(
         child: Center(
           child: Container(
-            child: Image.asset('assets/images/Group 1.png'),
+            child: Image.asset('assets/images/Group 1_2.png'),
           ),
         ),
 

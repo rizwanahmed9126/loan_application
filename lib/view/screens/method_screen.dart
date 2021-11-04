@@ -262,7 +262,7 @@ class _MethodScreenState extends State<MethodScreen> {
 
                 GestureDetector(
                     onTap: (){
-                      //navigationService.navigateTo(occupationScreenRoute);
+                      navigationService.navigateTo(statusScreenRoute);
                     },
                     child: Container(
                         height: height*0.07,
